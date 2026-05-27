@@ -1,0 +1,28 @@
+{
+  "name": "trabalho-conclusao-programacao-para-automacao-testes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicasantos13/trabalho-conclusao-programacao-para-automacao-testes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jessicasantos13/trabalho-conclusao-programacao-para-automacao-testes/issues"
+  },
+  "homepage": "https://github.com/jessicasantos13/trabalho-conclusao-programacao-para-automacao-testes#readme",
+  "dependencies": {
+    "mocha": "^11.7.6",
+    "mochawesome": "^7.1.4"
+  }
+}
