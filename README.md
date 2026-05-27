@@ -23,8 +23,7 @@ Este projeto foi desenvolvido como requisito para a conclusão da disciplina de 
 
 ## Como rodar os testes
 
-Após configurar o atalho no package.json, utilize o comando:
-npm test.
+Após configurar o atalho no package.json, utilize o comando: npm test.
 
 ## Regras de Negócio
 
