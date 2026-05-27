@@ -10,15 +10,15 @@ Este projeto foi desenvolvido como requisito para a conclusão da disciplina de 
 
 ## Pré-requisitos
 
-É necessário ter o ambiente de execução `Node.js` instalado para interpretar e executar os arquivos JavaScript [1].
+É necessário ter o ambiente de execução `Node.js` instalado para interpretar e executar os arquivos `JavaScript`.
 
 ## Instalação e Configuração
 
 1. Inicie o projeto para gerar o arquivo `package.json`:
-   `npm init -y` [2, 3]
-2. No `package.json`, altere obrigatoriamente a propriedade `"type"` para `"module"` para permitir o uso de `import`/`export` [4, 5].
+   `npm init -y`
+2. No `package.json`, altere obrigatoriamente a propriedade `"type"` para `"module"` para permitir o uso de `import`/`export`
 3. Instale o framework de testes `Mocha`:
-   `npm i mocha` [2, 5]
+   `npm i mocha` 
 4. No campo `"scripts"` do `package.json`, substitua a linha de teste por: `"test": "mocha"`.
 
 ## Como rodar os testes
@@ -32,4 +32,4 @@ O sistema categoriza os pagamentos automaticamente seguindo estas regras:
 *   Valor superior a 100.00: categoria `'caro'`.
 *   Valor igual ou inferior a 100.00: categoria `'padrão'`.
 
-A organização dos testes segue o padrão AAA (`Arrange`, `Act`, `Assert`) para garantir clareza na execução [6].
+A organização dos testes segue o padrão AAA (`Arrange`, `Act`, `Assert`) para garantir clareza na execução.
