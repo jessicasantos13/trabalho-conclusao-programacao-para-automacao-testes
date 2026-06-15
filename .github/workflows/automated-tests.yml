@@ -1,0 +1,44 @@
+name: "Testes De Unidade Com Allure Report"
+
+# gatilhos / triggers - regras de disparo
+# gatilho manual = workflow_dispatch
+# gatilho agendado = schedule
+# gatilho por push = workflow_run
+on:
+  workflow_dispatch: 
+  schedule:
+    # cronograma de execução
+    # 1 - minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
+    - cron: "*/15 * * * *"
+  push:
+    branches:
+      - master
+
+# tarefas dentro da pipeline = jobs
+jobs:
+  # nome do job
+  unidade:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+      
+      - name: Instalando dependências
+        run: npm install 
+
+      - name: Rodando testes unitários
+        run: npm run test
+
+      - name: Salvando relatório de testes com Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: build/allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
