@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "allure:generate": "npx allure generate",
+    "allure:open": "npx allure open"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,8 @@
     "url": "https://github.com/jessicasantos13/trabalho-conclusao-programacao-para-automacao-testes/issues"
   },
   "homepage": "https://github.com/jessicasantos13/trabalho-conclusao-programacao-para-automacao-testes#readme",
-  "dependencies": {
-    "mocha": "^11.7.6",
-    "mochawesome": "^7.1.4"
+  "devDependencies": {
+    "allure-mocha": "^3.10.0",
+    "mocha": "^11.7.6"
   }
 }
