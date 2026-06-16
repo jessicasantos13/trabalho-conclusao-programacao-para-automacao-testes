@@ -34,11 +34,6 @@ jobs:
       - name: Rodando testes unitários
         run: npm run test
 
-  relatorio:
-    runs-on: ubuntu-latest
-    needs: [unidade]
-
-    steps: 
       - name: Configura histórico do Allure Report
         uses: actions/checkout@v4
         if: always()
