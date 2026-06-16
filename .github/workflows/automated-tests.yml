@@ -51,6 +51,10 @@ jobs:
           allure_report: allure-report
           allure_history: allure-history
 
+      - name: Força a criação do .nojekyll na pasta do relatório # Necessário para que o GitHub Pages não ignore arquivos e pastas que começam com underscore, como é o caso do allure-history
+        if: always()
+        run: touch allure-history/.nojekyll
+
       - name: Upload do relatório como artefato do GitHub
         uses: actions/upload-artifact@v4
         if: always()
@@ -66,5 +70,6 @@ jobs:
           github_token: ${{ secrets.GH_PAGES }}
           publish_branch: gh-pages
           publish_dir: allure-history
-
+          keep_files: true # Mantém o histórico antigo para que o Allure Report possa comparar resultados e mostrar tendências
+        
 
