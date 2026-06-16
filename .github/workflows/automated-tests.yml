@@ -51,10 +51,20 @@ jobs:
           allure_report: allure-report
           allure_history: allure-history
 
-      - name: Publicando histórico do Allure Report no GitHub Pages
+      - name: Upload do relatório como artefato do GitHub
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-html-report  
+          path: allure-report  # Pasta que contém a página web gerada nesta execução
+          retention-days: 10  # Mantém o artefato por 10 dias, depois é automaticamente excluído  
+
+      - name: Publica o relatório no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: always()
         with:
           github_token: ${{ secrets.GH_PAGES }}
           publish_branch: gh-pages
           publish_dir: allure-history
+
+
